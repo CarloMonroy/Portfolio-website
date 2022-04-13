@@ -1,0 +1,131 @@
+{% include "header.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+        <!-- Page Content-->
+        <div class="container-fluid p-0">
+            <!-- About-->
+            <section class="resume-section" id="about">
+                <div class="resume-section-content">
+                    <h1 class="mb-0">
+                        Carlo
+                        <span class="text-primary">Monroy</span>
+                    </h1>
+                    <div class="subheading mb-5">
+                        Guadalajara, Jalisco ·
+                        <a href="mailto:name@email.com">carlomonroy1997@gmail.com</a>
+                    </div>
+                    <p class="lead mb-5">I'm a Computer Engineer and software developer from Universidad de Guadalajara.</p>
+                    <div class="social-icons">
+                        <a class="social-icon" href="https://www.linkedin.com/in/carlo-monroy-515839228/"><i class="fab fa-linkedin-in"></i></a>
+                        <a class="social-icon" href="https://github.com/CarloMonroy"><i class="fab fa-github"></i></a>
+                        <a class="social-icon" href="https://twitter.com/CarloMclovin"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+            </section>
+            <hr class="m-0" />
+            <!-- Experience-->
+            <section class="resume-section" id="experience">
+                <div class="resume-section-content">
+                    <h2 class="mb-5">Experience</h2>
+                    <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
+                        <div class="flex-grow-1">
+                            <h3 class="mb-0">Service Desk Specialist</h3>
+                            <div class="subheading mb-3">NTT DATA Services</div>
+                            <p>General L1 Support for hardware and MS Office packages. Advanced technical support for in-house applications and developments</p>
+                        </div>
+                        <div class="flex-shrink-0"><span class="text-primary">Jan 2020 - jan 2021</span></div>
+                    </div>
+                    <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
+                        <div class="flex-grow-1">
+                            <h3 class="mb-0">Customer Service Specialist</h3>
+                            <div class="subheading mb-3">TTEC</div>
+                        </div>
+                        <div class="flex-shrink-0"><span class="text-primary">Aug 2018- Dec 2019</span></div>
+                    </div>
+
+                </div>
+            </section>
+            <hr class="m-0" />
+            <!-- Education-->
+            <section class="resume-section" id="education">
+                <div class="resume-section-content">
+                    <h2 class="mb-5">Education</h2>
+                    <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
+                        <div class="flex-grow-1">
+                            <h3 class="mb-0">CUCEI- Universidad De Guadalajara</h3>
+                            <div class="subheading mb-3">Computer Engineer</div>
+                            <div>Computer engineering, software development & Agile Methodologies</div>
+                        </div>
+                        <div class="flex-shrink-0"><span class="text-primary">Feb 2021 - present</span></div>
+                    </div>
+            </section>
+            <hr class="m-0" />
+            <!-- Skills-->
+            <section class="resume-section" id="skills">
+                <div class="resume-section-content">
+                    <h2 class="mb-5">Skills</h2>
+                    <div class="subheading mb-3">Programming Languages & Tools</div>
+                    <ul class="list-inline dev-icons">
+                        <li class="list-inline-item"><i class="fab fa-html5"></i></li>
+                        <li class="list-inline-item"><i class="fab fa-css3-alt"></i></li>
+                        <li class="list-inline-item"><i class="fa-brands fa-python"></i></li>
+                        <li class="list-inline-item"><i class="fa-solid fa-c"></i></li>
+                        <li class="list-inline-item"><i class="fa-brands fa-git-alt"></i></li>
+                        <li class="list-inline-item"><i class="fa-brands fa-bootstrap"></i></li>
+                        <li class="list-inline-item"><i class="fa-solid fa-c"></i><i class="fa-solid fa-plus"></i><i class="fa-solid fa-plus"></i></li>
+
+
+                    </ul>
+                    <div class="subheading mb-3">Workflow</div>
+                    <ul class="fa-ul mb-0">
+                        <li>
+                            <span class="fa-li"><i class="fas fa-check"></i></span>
+                            Mobile-First, Responsive Design
+                        </li>
+                        <li>
+                            <span class="fa-li"><i class="fas fa-check"></i></span>
+                            Cross Browser Testing & Debugging
+                        </li>
+                        <li>
+                            <span class="fa-li"><i class="fas fa-check"></i></span>
+                            Cross Functional Teams
+                        </li>
+                        <li>
+                            <span class="fa-li"><i class="fas fa-check"></i></span>
+                            Agile Development & Scrum
+                        </li>
+                    </ul>
+                </div>
+            </section>
+            <hr class="m-0" />
+            <!-- Interests-->
+            <section class="resume-section" id="interests">
+                <div class="resume-section-content">
+                    <h2 class="mb-5">Interests</h2>
+                    <p>Apart from being a computer enginering and software developer. I love reading, learning and videogames</p>
+                    <p class="mb-0">When forced indoors, I follow a number of sci-fi and fantasy genre movies and television shows. I also love loading TBOI</p>
+                </div>
+            </section>
+            <hr class="m-0" />
+
+            <section class="resume-section" id="contact">
+                <div class="resume-section-content">
+                    <h2 class="mb-5">Contact</h2>
+                    {% with messages = get_flashed_messages() %}
+                    {% if messages == get_flashed_messages(): %}
+                    {% for message in messages: %}
+                    <p style="color: red">{{ message }}</p>
+                    {% endfor %}
+                    {% endif %}
+                    {% endwith %}
+                    {{ wtf.quick_form(form, novalidate=True, button_map={"submit": "primary"}) }}
+
+                </div>
+            </section>
+        </div>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
+    </body>
+</html>
