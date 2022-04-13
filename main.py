@@ -29,7 +29,7 @@ login_manager.init_app(app)
 ckeditor = CKEditor(app)
 
 ## CONNECT TO DB
-app.config["SQLALCHEMY_DATABASE_URI"] = os.environ.get("DATABASE_URL",  "sqlite:///blog.db")
+app.config["SQLALCHEMY_DATABASE_URI"] = os.environ.get("DATABASE_URL")
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 db = SQLAlchemy(app)
 
@@ -63,6 +63,9 @@ class BlogPost(db.Model):
     date = db.Column(db.String(250), nullable=False)
     body = db.Column(db.Text, nullable=False)
     img_url = db.Column(db.String(250), nullable=False)
+
+
+db.create_all()
 
 # Define user_loader
 @login_manager.user_loader
