@@ -1,5 +1,6 @@
 from flask import Flask, render_template, redirect, url_for, flash, abort
 from flask_bootstrap import Bootstrap
+from wtforms import StringField, SubmitField, PasswordField, EmailField
 from forms import ContactForm, LoginForm, CreatePostForm
 from send_email import EmailManager
 from flask_sqlalchemy import SQLAlchemy
