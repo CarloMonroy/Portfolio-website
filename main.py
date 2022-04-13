@@ -1,6 +1,6 @@
 from flask import Flask, render_template, redirect, url_for, flash, abort
 from flask_bootstrap import Bootstrap
-from wtforms import StringField, SubmitField, PasswordField, EmailField
+
 from forms import ContactForm, LoginForm, CreatePostForm
 from send_email import EmailManager
 from flask_sqlalchemy import SQLAlchemy
@@ -9,11 +9,10 @@ from sqlalchemy.orm import relationship
 from flask_login import UserMixin, login_user, LoginManager, login_required, current_user, logout_user
 from functools import wraps
 from flask_ckeditor import CKEditor
-import requests
+
 from werkzeug.security import generate_password_hash, check_password_hash
 import os
-from wtforms import StringField, SubmitField, PasswordField
-from wtforms.validators import DataRequired
+
 
 
 
