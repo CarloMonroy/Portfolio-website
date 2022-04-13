@@ -165,19 +165,6 @@ def show_post(post_id):
     requested_post = BlogPost.query.get(post_id)
     return render_template("post.html", post=requested_post)
 
-@app.route('/register')
-def register():
-    email = "carlomonroy1997@gmail.com"
-    password = generate_password_hash(password='kali1997', method = 'pbkdf2:sha256',
-                                      salt_length=8)
-    name = 'Carlo Monroy'
-    new_user = User(
-        email = email,
-        password=password,
-        name=name
-    )
-    db.session.add(new_user)
-    db.session.commit()
 
 
 
