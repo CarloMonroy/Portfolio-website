@@ -65,7 +65,7 @@ class BlogPost(db.Model):
     img_url = db.Column(db.String(250), nullable=False)
 
 
-db.create_all()
+db.session.create_all()
 
 # Define user_loader
 @login_manager.user_loader
