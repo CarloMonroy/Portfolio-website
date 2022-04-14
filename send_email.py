@@ -4,8 +4,8 @@ import os
 
 class SendEmail:
     def __init__(self):
-        self.api_key = "82cc6b59d6b7586f051b94fe145962c5"
-        self.api_secret = "ace6b72730a0955817ad241451326fa6"
+        self.api_key = os.environ.get("API_KEY")
+        self.api_secret = os.environ.get("API_SECRET")
 
     def send_email(self, name, email, message):
         mailjet = Client(auth=(self.api_key, self.api_secret), version='v3.1')
