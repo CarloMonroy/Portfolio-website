@@ -1,8 +1,7 @@
 from flask import Flask, render_template, redirect, url_for, flash, abort
 from flask_bootstrap import Bootstrap
-
+from send_email import SendEmail
 from forms import ContactForm, LoginForm, CreatePostForm
-from send_email import EmailManager
 from flask_sqlalchemy import SQLAlchemy
 from datetime import date
 from sqlalchemy.orm import relationship
@@ -136,15 +135,9 @@ def index():
         name = form.name.data
         email = form.name.data
         message = form.message.data
-        send_email = EmailManager(
-            email=email,
-            name=name,
-            message=message
-        )
-        send_email.send_email()
+        email_manager = SendEmail()
+        email_manager.send_email(name=name, email=email, meesage=message)
         flash("Your message has been sent")
-        return redirect(url_for("index"))
-
 
     return render_template("index.html", form=form)
 
