@@ -136,7 +136,7 @@ def index():
         email = form.name.data
         message = form.message.data
         email_manager = SendEmail()
-        email_manager.send_email(name=name, email=email, meesage=message)
+        email_manager.send_email(name=name, email=email, message=message)
         flash("Your message has been sent")
 
     return render_template("index.html", form=form)
